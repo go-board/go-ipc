@@ -117,7 +117,7 @@ func (e *eventWaiter) wait(unused int32, timeout time.Duration) error {
 	switch ev {
 	case windows.WAIT_OBJECT_0:
 		return nil
-	case windows.WAIT_TIMEOUT:
+	case uint32(windows.WAIT_TIMEOUT):
 		return timeoutErr
 	default:
 		if err != nil {

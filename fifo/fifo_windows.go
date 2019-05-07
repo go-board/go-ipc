@@ -60,6 +60,9 @@ func (f *NamedPipe) Write(b []byte) (n int, err error) {
 
 // Close closes the object.
 func (f *NamedPipe) Close() error {
+	if f.pipeHandle == windows.InvalidHandle {
+		return errors.New("already closed")
+	}
 	err := windows.CloseHandle(f.pipeHandle)
 	f.pipeHandle = windows.InvalidHandle
 	return err

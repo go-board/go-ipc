@@ -57,7 +57,7 @@ func (e *WindowsEvent) WaitTimeout(timeout time.Duration) bool {
 	switch ev {
 	case windows.WAIT_OBJECT_0:
 		return true
-	case windows.WAIT_TIMEOUT:
+	case uint32(windows.WAIT_TIMEOUT):
 		return false
 	default:
 		if err != nil {

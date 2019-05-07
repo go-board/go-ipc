@@ -1,3 +1,9 @@
+# Release 0.6.1 (2019-05-07)
+
+ - vendor: update golang.org/x/sys.
+ - fifo: fix tests in windows.
+ - sync: fix compiation issue on windows with latest golang.org/x/sys.
+
 # Release 0.6.0 (2018-10-29)
 
  - vendor: gomod support.
